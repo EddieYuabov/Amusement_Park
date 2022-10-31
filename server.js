@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send('This is my string')
+  res.send('This is My string')
 })
 
 app.listen(PORT, () => {
