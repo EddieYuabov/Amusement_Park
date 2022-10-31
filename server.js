@@ -8,6 +8,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send('this is the route')
+})
+
 app.listen(PORT, () => {
   console.log(`Express server is listening on port ${PORT}`)
 })
