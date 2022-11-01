@@ -1,6 +1,6 @@
 import React from 'react'
-// import './App.css'
-import Rides from './components/Rides'
+import '../App.css'
+import RideCard from './RideCard'
 import RidesArray from './RidesArray.js'
 
 const RidesPage = () => {
@@ -12,7 +12,7 @@ const RidesPage = () => {
           {
           }
           return (
-            <Rides ride={rideItem.ride} thrillLevel={rideItem.thrillLevel} />
+            <RideCard ride={rideItem.ride} thrillLevel={rideItem.thrillLevel} />
           )
         })}
       </ul>
