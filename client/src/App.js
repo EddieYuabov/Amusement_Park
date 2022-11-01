@@ -1,18 +1,23 @@
 import './App.css'
-import Home from './components/Home'
-import Rides from './components/Rides'
-import { Routes, Route } from 'react-router-dom'
+
 import React from 'react'
+
+import Rides from './components/Rides'
+import RidesArray from './components/RidesArray.js'
 
 const App = () => {
   return (
-    <div className="App">
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="places" element={<Rides />} /> */}
-        </Routes>
-      </main>
+    <div className="main-container">
+      <ul className="rides-list">
+        {RidesArray.map((rideItem) => {
+          console.log(rideItem)
+          {
+          }
+          return (
+            <Rides ride={rideItem.ride} thrillLevel={rideItem.thrillLevel} />
+          )
+        })}
+      </ul>
     </div>
   )
 }
