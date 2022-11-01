@@ -13,7 +13,7 @@ const Home = () => {
     <div className="Home">
        
        <button>
-       <Link className='link' to="/"> View All Rides</Link>
+       <Link className='link' to="rides"> View All Rides</Link>
        </button>
     </div>
       )
