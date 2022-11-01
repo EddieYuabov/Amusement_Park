@@ -38,25 +38,35 @@
 }
 
 .rides-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   border: 1px solid black;
   list-style: none;
-  width: 740px;
-  height: 600px;
+
+ 
 }
 .ride-card {
-  width: 700px;
-  height: 600px;
-  margin: 20px auto;
+  width: 300px;
+  height: 290px;
+  margin: 50px auto;
   border: 1px solid black;
   text-align: center;
   font-size: 15px;
   padding: 10px 10px;
 }
 h4 {
-  margin: 0;
+  margin: 20px auto;
+  font-size: 20px;
+  font-family:'Franklin Gothic Medium';
+}
+span {
+  font-size: 18px;
+
 }
 
-img {
-width: auto;
+.ride-image {
+width: 200px;
+height: 180px;
 
 }

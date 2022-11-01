@@ -1,8 +1,8 @@
-import './App.css'
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+// import './App.css'
 import Home from './components/Home'
-import Rides from './components/Rides'
+import { Routes, Route } from 'react-router-dom'
+import React from 'react'
+import RidesPage from './components/RidesPage'
 
 const App = () => {
   return (
@@ -10,8 +10,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/rides" element={<Rides />} />
-          {/* <Route path="food" element={<Food />} /> */}
+          <Route path="/rides" element={<RidesPage />} />
         </Routes>
       </main>
     </div>

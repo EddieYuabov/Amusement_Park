@@ -1,9 +1,9 @@
 import React from 'react'
-// import './App.css'
+import '../App.css'
+import RideCard from './RideCard'
 import RidesArray from './RidesArray.js'
-import RideCard from './RideCard.js'
 
-const Rides = () => {
+const RidesPage = () => {
   return (
     <div className="main-container">
       <ul className="rides-list">
@@ -20,4 +20,4 @@ const Rides = () => {
   )
 }
 
-export default Rides
+export default RidesPage
