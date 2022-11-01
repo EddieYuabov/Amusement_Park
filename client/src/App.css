@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.rides-list {
+  border: 1px solid black;
+  list-style: none;
+  width: 740px;
+  height: 600px;
+}
+.ride-card {
+  width: 700px;
+  height: 600px;
+  margin: 20px auto;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 10px;
+}
+h4 {
+  margin: 0;
+}
+
+img {
+width: auto;
+
+}
