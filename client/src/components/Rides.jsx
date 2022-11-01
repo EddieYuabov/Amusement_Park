@@ -1,21 +1,23 @@
 import React from 'react'
-import rideImages from './ridesImages'
-// import { useNavigate } from 'react-router-dom'
+// import './App.css'
+import Rides from './components/Rides'
+import RidesArray from './RidesArray.js'
 
-
-
-const Rides = (props) => {
-  // const navigate = useNavigate()
-const imageName = props.ride.toLowerCase().replaceAll(' ', '')
-
-  
-    return (
-      <li className='ride-card'>
-       <img src={rideImages[imageName]} />
-        <h4>{props.ride}</h4>
-        <span>{props.thrillLevel}</span>
-      </li>
-    )
+const RidesPage = () => {
+  return (
+    <div className="main-container">
+      <ul className="rides-list">
+        {RidesArray.map((rideItem) => {
+          console.log(rideItem)
+          {
+          }
+          return (
+            <Rides ride={rideItem.ride} thrillLevel={rideItem.thrillLevel} />
+          )
+        })}
+      </ul>
+    </div>
+  )
 }
 
-export default Rides
+export default RidesPage
