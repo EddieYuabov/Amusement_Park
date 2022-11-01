@@ -9,7 +9,7 @@ console.log('home')
 return (
 <div className="Home">
     <button className='link-button'>
-    <Link className = 'link' to="/rides">View All Rides</Link>
+    <Link className = 'link' to="rides">View All Rides</Link>
     </button>
 </div>
   )
