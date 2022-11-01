@@ -1,11 +1,11 @@
 import React from 'react'
 import rideImages from './ridesImages'
-// import { useNavigate } from 'react-router-dom'
+
 
 
 
 const Rides = (props) => {
-  // const navigate = useNavigate()
+
 const imageName = props.ride.toLowerCase().replaceAll(' ', '')
 
   

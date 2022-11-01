@@ -3,7 +3,8 @@ import React from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom' 
-// import './App.css'
+import '../App.css'
+import themeparkimage from '../themeparkimg.jpg'
 
 
 const Home = () => {
@@ -11,10 +12,11 @@ const Home = () => {
 
   return (
     <div className="Home">
-       
-       <button>
-       <Link className='link' to="/"> View All Rides</Link>
+       <img className='themepark-img' src={themeparkimage} />
+       <button className='home-btn' >
+       <Link className='link' to="rides"> View All Rides</Link>
        </button>
+       
     </div>
       )
 }
