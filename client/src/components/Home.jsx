@@ -11,10 +11,14 @@ const Home = () => {
 
   return (
     <div className="Home">
-       
-       <button>
-       <Link className='link' to="/"> View All Rides</Link>
-       </button>
+      <div id="foodDiv">
+        <button>
+          <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
+        </button>
+        <button>
+          <Link id="foodBtn" className='link' to="/foods"> View All Foods</Link>
+        </button>
+      </div>
     </div>
       )
 }

@@ -10,19 +10,19 @@ app.use(express.json())
 app.use(cors())
 
 //Create Rides
-app.post('/', async (req, res) => {
+app.post('/rides', async (req, res) => {
   let createRides = await Rides.create(req.body)
   res.json(createRides)
 })
 
 // Read all Rides
-app.get('/', async (req, res) => {
+app.get('/rides', async (req, res) => {
   let allRides = await Rides.find({})
   res.json(allRides)
 })
 
 // Delete Ride
-app.delete('/:id', async (req, res) => {
+app.delete('/rides/:id', async (req, res) => {
   let deletedRide = await Rides.findByIdAndDelete(req.params.id)
   res.json(deletedRide)
 })
