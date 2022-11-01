@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
@@ -8,5 +9,6 @@ mongoose
   .catch((e) => {
     console.log('Connection Failed', e.messages)
   })
+mongoose.set('debug', true)
 const db = mongoose.connection
 module.exports = db
