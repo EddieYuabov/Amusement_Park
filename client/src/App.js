@@ -1,10 +1,7 @@
-import logo from './logo.svg'
 import './App.css'
+
 import React from 'react'
-// function App() {
-//   return
-// }
-// export default App
+
 import Rides from './components/Rides'
 import RidesArray from './components/RidesArray.js'
 
@@ -21,8 +18,6 @@ const App = () => {
           )
         })}
       </ul>
-      {/* <Route path="/" element={<App />} />
-      <Route path="/Rides/" element={<Rides />} /> */}
     </div>
   )
 }
