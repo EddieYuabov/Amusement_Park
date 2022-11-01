@@ -11,9 +11,9 @@ const imageName = props.ride.toLowerCase().replaceAll(' ', '')
   
     return (
       <li className='ride-card'>
-       <img src={rideImages[imageName]} />
+       <img src={rideImages[imageName]} className='ride-image'/>
         <h4>{props.ride}</h4>
-        <span>{props.thrillLevel}</span>
+        <span>Thrill Level: {props.thrillLevel}</span>
       </li>
     )
 }
