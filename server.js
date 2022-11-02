@@ -3,7 +3,6 @@ const db = require('./db')
 const express = require('express')
 const cors = require('cors')
 const { Rides, Park } = require('./models')
-
 const app = express()
 
 app.use(express.json())

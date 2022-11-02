@@ -11,20 +11,14 @@ const Home = () => {
   return (
     <div className="Home">
        <img className='themepark-img' src={themeparkimage} />
-       <button className='home-btn' >
-       <Link className='link' to="rides"> View All Rides</Link>
-       </button>
       <div id="foodDiv">
-        <button>
-          <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
+        <button id="rideBtn" >
+          <Link className='link' to="/rides"> View All Rides</Link>
         </button>
-        <button>
-          <Link id="foodBtn" className='link' to="/foods"> View All Foods</Link>
+        <button id="foodBtn">
+          <Link  className='link' to="/foods"> View All Foods</Link>
         </button>
       </div>
-       <button>
-       <Link className='link' to="rides"> View All Rides</Link>
-       </button>
     </div>
       )
 }
