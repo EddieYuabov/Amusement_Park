@@ -1,27 +1,30 @@
-import { useState, useEffect } from 'react'
 import React from 'react'
 import {Link} from 'react-router-dom' 
 import '../App.css'
-import themeparkimage from '../themeparkimg.jpg'
+import themeparkimage from '../themeparkimage.jpg'
+
 
 
 const Home = () => {
 
 
-  return (
+return (
     <div className="Home">
+
+<div id="foodDiv">
+
        <img className='themepark-img' src={themeparkimage} />
       <div id="foodDiv">
-        <button id="rideBtn" >
-          <Link className='link' to="/rides"> View All Rides</Link>
+        <button>
+          <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
         </button>
-        <button id="foodBtn">
-          <Link  className='link' to="/foods"> View All Foods</Link>
+        <button>
+          <Link id="foodBtn" className='link' to="/foods"> View All Foods</Link>
         </button>
       </div>
     </div>
+    </div>
       )
 }
-
 
 export default Home
