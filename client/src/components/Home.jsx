@@ -1,35 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom' 
-<<<<<<< HEAD
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+import '../App.css'
+
 
 const Home = () => {
 
-console.log('home')
+
 return (
-<div className="Home">
-    <button className='link-button'>
-    <Link className = 'link' to="rides">View All Rides</Link>
-    </button>
-</div>
-  )
-=======
-// import './App.css'
-
-
-const Home = () => {
-
-
-  return (
     <div className="Home">
-       
-       <button>
-       <Link className='link' to="/"> View All Rides</Link>
-       </button>
-    </div>
-      )
->>>>>>> 0e42203baaea60c9c2874038b756e8f9c1728f0f
+<div id="foodDiv">
+        <button>
+    <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
+        </button>
+        <button>
+    <Link id="foodBtn" className='link' to="/food"> View All Foods</Link>
+        </button>
+</div>
+</div>
+)
 }
 
 
