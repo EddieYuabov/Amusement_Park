@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom' 
 import '../App.css'
+import themeparkimage from '../themeparkimg.jpg'
+
 
 
 const Home = () => {
@@ -8,16 +10,31 @@ const Home = () => {
 
 return (
     <div className="Home">
+
 <div id="foodDiv">
+
+       <img className='themepark-img' src={themeparkimage} />
+       <button className='home-btn' >
+       <Link className='link' to="rides"> View All Rides</Link>
+       </button>
+      <div id="foodDiv">
         <button>
     <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
         </button>
         <button>
     <Link id="foodBtn" className='link' to="/food"> View All Foods</Link>
-        </button>
+          </button>
 </div>
 </div>
 )
+
+      </div>
+       <button>
+       <Link className='link' to="rides"> View All Rides</Link>
+       </button>
+    </div>
+      )
+
 }
 
 export default Home
