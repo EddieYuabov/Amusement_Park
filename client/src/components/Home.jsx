@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom' 
-// import './App.css'
+import '../App.css'
+import themeparkimage from '../themeparkimg.jpg'
 
 
 const Home = () => {
@@ -11,6 +10,10 @@ const Home = () => {
 
   return (
     <div className="Home">
+       <img className='themepark-img' src={themeparkimage} />
+       <button className='home-btn' >
+       <Link className='link' to="rides"> View All Rides</Link>
+       </button>
       <div id="foodDiv">
         <button>
           <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
@@ -19,11 +22,9 @@ const Home = () => {
           <Link id="foodBtn" className='link' to="/foods"> View All Foods</Link>
         </button>
       </div>
-       
        <button>
        <Link className='link' to="rides"> View All Rides</Link>
        </button>
-
     </div>
       )
 }
