@@ -1,16 +1,21 @@
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import {Link} from 'react-router-dom' 
 import '../App.css'
 
+
 const Home = () => {
 
-console.log('home')
+
 return (
-<div className="Home">
-    <button className='link-button'>
-    <Link className = 'link' to="rides">View All Rides</Link>
-    </button>
+    <div className="Home">
+<div id="foodDiv">
+        <button>
+    <Link id="rideBtn" className='link' to="/rides"> View All Rides</Link>
+        </button>
+        <button>
+    <Link id="foodBtn" className='link' to="/food"> View All Foods</Link>
+        </button>
+</div>
 </div>
 )
 }
