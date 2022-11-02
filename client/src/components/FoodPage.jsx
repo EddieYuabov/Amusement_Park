@@ -22,7 +22,6 @@ useEffect(() => {
   }
   apiCall()
 }, [])
-
 const handleSubmit = async (event) => {
   event.preventDefault()
   let getFood = await axios
@@ -80,5 +79,4 @@ return (
   </main>
 )
 }
-
 export default FoodPage
