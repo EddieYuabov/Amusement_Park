@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React from 'react'
 import '../App.css'
-import { useState, useEffect, useSyncExternalStore } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useState, useEffect} from 'react'
+
+
+
 const FoodPage = () => {
 const [formState, setFormState] = useState({
   name: '',
@@ -11,11 +12,12 @@ const [formState, setFormState] = useState({
   category: ''
 })
 const [foods, setFoods] = useState([])
-const [remove, removedFoods] = useState('')
-let { id } = useParams()
+
+
+
 useEffect(() => {
   const apiCall = async () => {
-    let response = await axios.get('http://localhost:3001/food')
+    let response = await axios.get(`http://localhost:3001/food`)
     setFoods(response.data)
   }
   apiCall()
@@ -30,7 +32,7 @@ const handleSubmit = async (event) => {
     .catch((error) => {
       console.error(error)
     })
-  setFoods([...foods, getFood.data])
+  setFoods([...foods, getFood.data]) 
   console.log(getFood)
   setFormState({
     name: '',
@@ -41,37 +43,30 @@ const handleSubmit = async (event) => {
 const handleChange = (event) => {
   setFormState({ ...formState, [event.target.id]: event.target.value })
 }
-// const handleDelete = async (event) => {
-//   event.preventDefault()
-//   let deleteItem = await axios
-//     .delete(`http://localhost:3001/food/${id}`)
-//     .then((response) => {
-//       return response
-//     })
-//     .catch((error) => {
-//       console.log(error)
-//     })
-//   setFormState({ name: '', price: '', category: '' })
-// }
-// const handleDelete = async (event) => {
-//   event.preventDefault()
-//   let deletedItem = await axios.delete(`http://localhost:3001/food/${id}`, formState)
-//   removedFoods([remove, deletedItem.data])
-//   setFormState({name: '', price: '', category: ''})
-//   }
+
+
+const handleDelete = async (id, index) => {
+  await axios.delete(`http://localhost:3001/food/${id}`, formState)
+  let tempState = [...foods]
+  tempState.splice(index, 1)
+  setFoods(tempState)
+  setFormState({name: '', price: '', category: ''})
+  }
+
 return (
   <main>
     <div>
       <h1>Food Pages</h1>
-      {foods.map((food) => (
-        <div className='foods'>
+      {foods.map((food, index) => (
+        <div className='foods' key={food._id}>
         <h2>{food.name}</h2>
         <p>${food.price}</p>
         <p>{food.category}</p>
-        {/* <button className='link-button' onClick={handleDelete}>Delete</button> */}
+        <button onClick={() => handleDelete(food._id, index)}>Delete</button>
         </div>
   ))}
     </div>
+    
     <form className="FoodForm" onSubmit={handleSubmit}>
       <label htmlFor='name'>Food Name: </label>
       <input id="name" value={formState.name} onChange={handleChange}></input>

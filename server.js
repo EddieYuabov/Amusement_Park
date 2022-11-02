@@ -2,12 +2,13 @@ const PORT = process.env.PORT || 3001
 const db = require('./db')
 const express = require('express')
 const cors = require('cors')
-const { Rides, Park } = require('./models')
-
+const logger = require('morgan')
+const { Rides, Food } = require('./models')
 const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use(logger('dev'))
 
 //Create Rides
 app.post('/rides', async (req, res) => {
@@ -28,15 +29,25 @@ app.delete('/rides/:id', async (req, res) => {
 })
 
 //Create Park
-app.post('/park', async (req, res) => {
-  let createPark = await Park.create(req.body)
+app.post('/food', async (req, res) => {
+  let createPark = await Food.create(req.body)
   res.json(createPark)
 })
 
-//Read all Parks
-app.get('/park', async (req, res) => {
-  let allParks = await Park.find({})
+app.get('/food', async (req, res) => {
+  let allParks = await Food.find({})
   res.json(allParks)
+})
+
+app.get('/food/:id', async (req, res) => {
+  const { id } = req.params
+  const food = await Food.findById(id)
+  return res.send(food)
+})
+
+app.delete('/food/:id', async (req, res) => {
+  let deletedFood = await Food.findByIdAndDelete(req.params.id, req.body)
+  res.json(deletedFood)
 })
 
 app.listen(PORT, () => {
